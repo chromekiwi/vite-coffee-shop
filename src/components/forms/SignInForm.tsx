@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { URL } from "@/router";
 
 const formSchema = z.object({
   email: z.string().min(2).max(50).email(),
@@ -79,7 +80,7 @@ export default function SignInForm() {
       <article className="lg:w-[280px]">
         <h3 className="text-xl mb-1">
           Don't have an account?{" "}
-          <a className="font-bold text-starbucks-green" href="/signup">
+          <a className="font-bold text-starbucks-green" href={URL.SIGN_UP}>
             Sign up
           </a>
         </h3>
