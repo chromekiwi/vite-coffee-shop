@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { ThemeProvider } from "@/providers/theme-provider";
-import routes from "@/router";
+import routes, { URL } from "@/router";
 
 function App() {
   return (
@@ -8,8 +8,20 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path={URL.HOME}
             element={routes.find((route) => route.name === "home")?.component()}
+          />
+          <Route
+            path={URL.SIGN_IN}
+            element={routes
+              .find((route) => route.name === "signin")
+              ?.component()}
+          />
+          <Route
+            path={URL.SIGN_UP}
+            element={routes
+              .find((route) => route.name === "signup")
+              ?.component()}
           />
         </Routes>
       </BrowserRouter>
